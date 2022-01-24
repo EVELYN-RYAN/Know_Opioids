@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br><br><br>
+<a class="mybutton" href="{% url 'index' %}">Back to Home</a>
+<br><br>
+<div >
+    <!--
+    <table>
+        <tr>
+            {% comment %} <th></th>
+            <th>NPI</th> {% endcomment %}
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>State</th> 
+            <th>Credentials</th> 
+            <th style="text-align: center;">Specialty</th>
+            <th>Is Opioid Prescriber?</th> 
+            <th>Total Prescriptions</th> 
+            
+        </tr>
+
+{% for prescriber in our_prescribers %}           
+        <tr>
+            <td style="text-align: center;">
+                    {{prescriber.fname}}
+            </td>
+            <td style="text-align: center;">
+                    {{prescriber.lname}}
+            </td>
+            <td style="text-align: center;">
+                    {{prescriber.gender}}
+            </td>
+            <td style="text-align: center;">
+                    {{prescriber.state}}
+            </td>
+            <td style="text-align: center;">
+                    {{prescriber.credentials}}
+            </td>
+            <td style="text-align: center;">
+                    {{prescriber.specialty}}
+            </td>
+            <td style="text-align: center;">
+                {{prescriber.isopioidprescriber}}
+            </td>
+            <td style="text-align: center;">
+                {{prescriber.totalprescriptions}}
+            </td>
+            
+        </tr>
+{% endfor %} 
+    </table>
+-->
+<table>
+
+<tr>
+    {% comment %} <th></th>
+    <th>NPI</th> {% endcomment %}
+    <th style="text-align: center;">Information Explanation</th>
+    <th style="text-align: center;">Total Count</th>
+    {% comment %} <th style="text-align: center;">Average sold by all prescribers</th> {% endcomment %}
+    
+    
+</tr>
+
+<br>
+<h1> Drug and Prescriber Statistics
+<br>
+
+{% comment %} ROW 1...SQL 1 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Perecentage of National prescriptions that contained opioids
+     </td>
+    <td style="text-align: center;">
+        5%  
+    </td>
+</tr>
+
+{% comment %} ROW 7...SQL 7 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Perecentage of Utah prescriptions that contained opioids
+     </td>
+    <td style="text-align: center;">
+        7%
+    </td>
+</tr>
+
+
+
+
+
+
+
+{% comment %} ROW 2...SQL 2 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Perecentage of National prescribers that do prescribe opioids
+     </td>
+    <td style="text-align: center;">
+        79%   
+    </td>
+</tr>
+
+{% comment %} ROW 3...SQL 3 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Perecentage of Utah prescribers that do prescribe opioids
+     </td>
+    <td style="text-align: center;">
+         84%
+    </td>
+</tr>
+
+{% comment %} ROW 6...SQL 6 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Perecentage of National prescribers with prescription count greater than the national average
+    </td>
+    <td style="text-align: center;">
+        34%
+    </td>
+</tr>
+
+{% comment %} ROW 4...SQL 4 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Perecentage of Utah prescribers with prescription count greater than the national average
+     </td>
+    <td style="text-align: center;">
+        22%
+    </td>
+</tr>
+
+
+
+
+
+{% comment %} ROW 5...SQL 5 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        National average for number of prescriptions per prescriber
+     </td>
+    <td style="text-align: center;">
+        4,005
+    </td>
+</tr>
+
+{% comment %} ROW 5...SQL 5 {% endcomment %}
+<tr>
+    <td style="text-align: center;">
+        Utah average for number of prescriptions per prescriber
+     </td>
+    <td style="text-align: center;">
+        2,638
+    </td>
+</tr>
+
+
+</table>
+</div>
+
+
+
+
+
+{% comment %} 
+{% for Triple in our_drugs %}
+<tr>
+    <td style="text-align: center;">
+
+        {{ Triple.drugname }}
+     </td>
+    <td style="text-align: center;">
+        {{ Triple.qtyprescribed }}   
+    </td>
+{%endfor%}
+</table>
+</div>
+
+ {% endcomment %}
+ 
+</table>
+</div>
+
+
+</div>
+
+</section>
+
+
+{% endblock %}
+

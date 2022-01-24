@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br>
+<section>
+        <div class="parent">
+            <div class="intro">
+                <div class="intro-text">
+                  <h1>Search Results</h1>
+                  {% comment %} <h3>Real hard stuff to swollow goes here&nbsp;</h3> {% endcomment %}
+                  <p>See the top ten prescribers for the drug by clicking the button. </p>
+                </div>
+                {% comment %} <a class="mybutton" href="{% url 'allDrugs' %}">See all drugs</a>
+                <br> {% endcomment %}
+                <a class="mybutton" href="{% url 'allDrugs' %}">Find another drug</a>
+            </div>
+            <div class="card">
+                <table>
+                    <tr>
+                        <th style="text-align: center;" >Show Top 10 Prescribers</th>
+                        <th style="text-align: center;">Drug Name</th>
+                        <th style="text-align: center;">Is Opioid?</th>
+                    </tr>
+
+                {% for drug in our_drugs %}           
+                    <tr>
+                        <td style="text-align: center;">
+                            <form name='form' method="get" action = {% url 'topTenDrugsPageView' %}>
+                                <label for='drug_name' ></label>
+                                <input type="text"  name='drug_name' id='drug_name' hidden value={{drug.drugname}}> 
+                                    <button type = "submit">Click Me!</button>
+                            </form> 
+                        </td>
+                        <td style="text-align: center;">
+                        {{ drug.drugname }}
+
+                        </td>
+                        <td style="text-align: center;">
+                            {{ drug.isopioid }}
+                        </td>
+
+                    </tr>
+                {% endfor %} 
+                </table>
+            </div>
+
+            
+        </div>
+    
+    </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+{%endblock%}
+
+
+
+<!--
+    this needs to show the top 10 prescribers in the database for whatever type of drug is shown.
+
+
+
+
+    OLD CODE{% comment %} <div class="parent">
+    <br><br>
+    <div>
+        <a class="mybutton" href="{% url 'allDrugs' %}">See all drugs</a>
+        <br><br>
+        <a class="mybutton" href="{% url 'searchDrug' %}">Search for another drug</a>
+    </div>
+    <br><br>
+    {% for drug in our_drugs %}
+    <p>  
+        {{ drug.drugname }}
+        {{ drug.isopioid }} {% endcomment %}
+        {% comment %} <form name='drug' method="get" action = {% url 'drugStats' %}>
+            <label for='NPI' ></label>
+            <input type="text"  name='NPI' id='NPI' hidden value={{prescriber.npi}}> 
+            <div class="column">
+                <button type = "submit">Show Prescribed Drugs</button>
+            </div>
+        </form> {% endcomment %}
+    {% comment %} </p>
+    {% endfor%}
+   
+</div>
+{% endblock %} {% endcomment %}
+
+
+<!--
+   
+    this needs to show the drugs that they have prescribed, and the average number of each type of drug that all prescribers prescribe.
+
+
+
+
+
+    
+-->
+
+
+
+{% comment %} {% endblock %}
+
+{% extends 'base.html' %}
+{%block content%}
+{%load static %} {% endcomment %}
+<!-- <link href="file:///Macintosh%20HD/Users/Evelyn/Desktop/IS%20403/BigFatLogos/github/INTEX_Project/OpioidAbuse/static/css/our.css" rel="stylesheet" type="text/css"> -->
+
+-->

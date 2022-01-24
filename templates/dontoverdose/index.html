@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<!-- <link href="file:///Macintosh%20HD/Users/Evelyn/Desktop/IS%20403/BigFatLogos/github/INTEX_Project/OpioidAbuse/static/css/our.css" rel="stylesheet" type="text/css"> -->
+<div class="containerCustom">
+ <div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'img/background.jpg'%}">
+ </div>
+  <div class="catch" style="position: relative;left: 5rem; text-align: left;">
+      
+       <img src="{% static 'img/KnowOpioidsfull.png'%}" style="width: 10%"><br>
+    <span style="font-size: 30pt;color: rgba(236,212,35,0.06))">
+        {% comment %} Finally, {% endcomment %}
+    </span> 
+        <span>Centralized Opioid Data</span>
+        <br><br><br>
+        
+  <div class="moveleft" style="position: relative;left: -4rem">
+    <a class="mybutton" href="{% url 'allPrescribers' %}" style="display:inline; border: thick;border-style: solid;color: rgba(236,212,35,1.00);text-decoration: none;width: 4rem;padding-top: 7px;padding-bottom: 7px;padding-left: 3rem;padding-right: 3rem">Prescribers</a>
+        
+     <a class="mybutton" href="{% url 'allDrugs' %}" style="display:inline; border: thick;border-style: solid;color: rgba(236,212,35,1.00);text-decoration: none;width: 4rem;padding-top: 7px;padding-bottom: 7px;padding-left: 3rem;padding-right: 3rem">Drugs</a>
+     </div>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+ <div class="text-center col-md-6 col-12">
+   <h3>Why is this Information Important?&nbsp;</h3>
+     <p>Tools For Health Professionals &amp; Government Offices&nbsp;&nbsp;</p>
+     <br>
+   <a class="mybutton" href="{% url 'pdf' %}" role="button" style="text-decoration: none">Our Findings Page</a>
+ </div>
+ <div class="text-center col-md-6 col-12">
+   <h3>How Will This Data Help?&nbsp;</h3>
+   <p>Opioids &amp; Their Impact on the United States&nbsp;</p>
+   <br>
+   <a class="mybutton"href="{% url 'implementation' %}" role="button" style="text-decoration: none">Implementation</a>
+ </div>
+</div>
+</div>
+<br>
+<hr>
+<div class="container">
+<div class="row">
+ <div class="col-lg-3 col-md-6 col-12">
+   <h1 style="text-align: center;">5%</h1>
+   <p style="text-align: center;">Perecentage of all prescriptions that are opioids</p>
+ </div>
+ <div class="col-lg-3 col-md-6 col-12">
+   <h1 style="text-align: center;">595,191</h1>
+   <p style="text-align: center;">Total number of prescriptions that include Hydrocodone</p>
+ </div>
+ <div class="col-lg-3 col-md-6 col-12">
+   <h1 style="text-align: center;">80%</h1>
+   <p style="text-align: center;">Perecentage of prescribers that do prescribe opioids</p>
+ </div>
+ <div class="col-lg-3 col-md-6 col-12">
+   <h1 style="text-align: center;">22%</h1>
+   <p style="text-align: center;">Utah prescribers that had a total presciption count above the national average</p>
+ </div>
+</div>
+</div>
+<hr>
+<section>
+<h2 class="text-center">The National Crisis</h2>
+<div class="container">
+ <div class="row">
+   <div class="col-12">
+     <div class="embed-responsive embed-responsive-16by9">
+       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EsAgnVMWxBc"></iframe>
+     </div>
+   </div>
+ </div>
+</div>
+</section>
+<div class="container mt-4">
+<div class="row">
+ <div class="col-sm-6">
+   <div class="card">
+     <img class="card-img-top" src="{% static 'img/USOPIOID.png'%}" alt="Card image cap">
+     <div class="card-body">
+       <h5 class="card-title">U.S.A Deaths</h5>
+       <p class="card-text">Percentages by state</p>
+       <br> 
+       <a href="{% url 'sql'%}" class="mybutton">More Stats &amp; Analytics&nbsp;&nbsp;</a>
+     </div>
+     <br>
+     <div class="card-body">
+      <h5 class="card-title">Want to know more?</h5>
+      <p class="card-text">Learn about the current crisis by following the link below.</p>
+      <br>      
+      {% comment %} <a href="#" class="mybutton">More Stats &amp; Analytics&nbsp;&nbsp;</a> {% endcomment %}
+      <a href="http://www.utahnaloxone.org/" class="mybutton">Click Me to Learn More</a>
+
+    </div>
+    <br>
+   </div>
+ </div>
+ <div class="col-sm-6">
+   <div class="card">
+
+     <div class="card-body">
+       <h5 class="card-title">How Can I Contribute?&nbsp;&nbsp;</h5>
+       <p class="card-text">Learn more about the current drugs.</p>
+       <br>
+       <a href="{% url 'allDrugs'%}" class="mybutton">See Drugs</a>
+         <br><br><br>
+       <p class="card-text">Know of a medical provider not on the list?&nbsp;&nbsp;</p>
+       <br>
+       <a class="mybutton" href="{% url 'addPrescriber'%}">Register A Physician&nbsp;</a>
+       <br><br><br>
+       <p class="card-text">Want to get in contact with us?</p>
+       <br>
+       <a class="mybutton" href="#contactbottom">See Contact Information</a>
+       <br><br><br>
+       <p class="card-text">See what other people are saying.</p>
+       <br>
+       <a class="mybutton" href="#testimonials">See Testimonials</a>
+       <br><br><br>
+       <p class="card-text">Learn more about us here.</p>
+       <br>
+       <a class="mybutton" href="#aboutUs">About Us</a>
+       <br><br>
+     </div>
+     
+   </div>
+   <br>
+   {% comment %} <div class="card">
+
+    <div class="card-body">
+      <h5 class="card-title">How Can I learn more?&nbsp;&nbsp;</h5>
+      
+      <p class="card-text">Check out our about page!&nbsp;&nbsp;</p>
+      <br>
+      <a class="mybutton" href="{% url 'about'%}">Come and see!&nbsp;</a>
+    </div>
+    <br>
+    
+  </div> {% endcomment %}
+ </div>
+</div>
+</div>
+{%endblock%}

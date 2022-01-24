@@ -1,0 +1,95 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Know Opioids</title>
+    <link rel="shortcut icon" href="{% static 'img/KnowOpioids.png'%}">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap-4.4.1.css'%}" rel="stylesheet">
+    <link href="{% static 'css/our.css'%}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="searchbar">
+      <a href="{% url 'index'%}"><img src="{% static 'img/KnowOpioids.png'%}"><a/>
+        
+        <a class="collect" >Data Collection For Known Drugs</box>
+        <a class="collect" href="{% url 'allPrescribers' %}">Who  Prescribes?</a>
+        <a class="collect" href="{% url 'allDrugs' %}">Common Opioids</a>
+        {% comment %} <a class="collect" href="{% url 'contact' %}">Contact Us</a> {% endcomment %}
+        
+    {% comment %} <input class="searchbox" placeholder="Search the database"> {% endcomment %}
+  </div> 
+    
+    <!-- This is what will link to the other pages-->
+    {%block content%}
+    {%endblock%}
+
+
+    {% comment %} THIS IS JUST FOR NOW, we can take out later! {% endcomment %}
+    {% comment %} <br><br><br><br><br><br><br><br><br> {% endcomment %}
+    <!-- FOOTER -->
+<div class="daddy" style="background-color: rgba(0,0,0,0.40)">
+  <div class="container" style="text-align: center;" >
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 mb-md-0 mb-2">
+          <h2 id="contactbottom">Contact Us</h2>
+          <address>
+            <strong>BYU IS</strong><br>
+            Brigham Young University, Ernest L. Wilkinson Student Center, 1 Campus Dr #1944, Provo, UT 84604, PO BOX 12345<br>
+          <u>Phone : 385-333-439</u>
+          </address>
+          
+        </div>
+        <div class="col-lg-4 col-12">
+          <h2 id='aboutUs'>About Us</h2>
+          {% comment %} <p>Group I-8 recognized a massive need for the publication of this data. We knew that if we didn't deploy by Friday, Dec 3, then 50 other similar websites with the same data was going to rise from the dust and steal our troph. So we acted fast and promptly. And now, hopefully we win the prize in tex....as ?!?!?!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p> {% endcomment %}
+          <p>Government officials and public health offices have made known to the rising concern of prescription drug abuse and reached out to us for help in creating the tool for health professionals, government agencies and citizens alike. Group I-8 recognized a massive need for the publication of this data and acted promptly to create the needed resources.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <h2 id='testimonials'>Testimonials</h2>
+          <ul class="list-unstyled">
+            <li class="media">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">Ciara Gregovich</h5>
+                <p class="mb-0">"People are behind the efforts we're trying to accomplish."</p>
+              </div>
+            </li>
+            <li class="media my-4">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">Brittany Burgunder</h5>
+                <p class="mb-0">“Recovery is hard. Regret is harder.”</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>   
+</div>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p>Copyright © Group I-8. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static 'js/parallax.js-1.5.0/parallax.js-1.5.0/parallax.js'%}"></script>
+    <script src="{% static 'js/parallax.js-1.5.0/parallax.js-1.5.0/parallax.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/our.js'%}"></script>
+    <script src="{% static 'js/bootstrap-4.4.1.js'%}"></script>
+  </body>
+  </html>

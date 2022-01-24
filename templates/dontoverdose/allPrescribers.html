@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{%block content%}
+{%load static %}
+<!-- <link href="file:///Macintosh%20HD/Users/Evelyn/Desktop/IS%20403/BigFatLogos/github/INTEX_Project/OpioidAbuse/static/css/our.css" rel="stylesheet" type="text/css"> -->
+
+<br><br><br>
+<section>
+        <div class="parent">
+            <div class="intro">
+                <div class="intro-text">
+                  <h1>Prescribers</h1>
+                  {% comment %} <h3>Real hard stuff to swollow goes here&nbsp;</h3>
+                  <p>Write here till your heart is content</p> {% endcomment %}
+                  <p>Current list of all the prescribers in the database.</p>
+                </div>
+                <a class="mybutton" href="{% url 'addPrescriber' %}">Add New Prescriber</a>
+                <br>
+                <a class="mybutton" href="{% url 'searchPrescriber' %}">Find a Prescriber</a>
+            </div>
+            <div class="card">
+                <table>
+                    <tr>
+                        <th style="text-align: center;">Edit Prescriber</th>
+                        {% comment %} <th>NPI</th> {% endcomment %}
+                        <th style="text-align: center;">First Name</th>
+                        <th style="text-align: center;">Last Name</th>
+                        <th style="text-align: center;">Gender</th>
+                        <th style="text-align: center;">State</th> 
+                        <th style="text-align: center;">Credentials</th> 
+                        <th style="text-align: center;">Specialty</th>
+                        <th style="text-align: center;">Is Opioid Prescriber?</th> 
+                        <th style="text-align: center;">Total Prescriptions</th> 
+                        <th style="text-align: center;">Delete Prescriber</th>
+                    </tr>
+
+        {% for prescriber in prescriber_list %}           
+                    <tr>
+                        <td>
+                            <a class="mybutton2" href="{% url 'singlePrescriber' NPI=prescriber.npi %}">Edit</a>
+                        </td>
+                        {% comment %} <td style="text-align: center;">
+                            {{prescriber.npi}}
+                        </td> {% endcomment %}
+                        <td style="text-align: center;">
+                                {{prescriber.fname}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.lname}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.gender}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.state}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.credentials}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.specialty}}
+                        </td>
+                        <td style="text-align: center;">
+                            {{prescriber.isopioidprescriber}}
+                        </td>
+                        <td style="text-align: center;">
+                            {{prescriber.totalprescriptions}}
+                        </td>
+                        <td>
+                            <a class="mybutton2"href="{% url 'deletePrescriber' NPI=prescriber.npi %}">Delete</a>
+                        </td>
+                    </tr>
+        {% endfor %} 
+        </table>
+            </div>
+
+            
+        </div>
+    
+    </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+{%endblock%}
+
